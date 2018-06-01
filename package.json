@@ -1,0 +1,45 @@
+{
+  "name": "cssmodule",
+  "version": "0.0.0",
+  "description": "CSSOM assembler library",
+  "files": [
+    "lib"
+  ],
+  "main": "lib",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "cross-env NODE_ENV=test nyc mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "mocha": "mocha",
+    "karma": "karma start",
+    "test-full": "npm run karma && npm test",
+    "build": "webpack",
+    "watch": "webpack -w",
+    "api": "rm -rf dist/api && npm run jsdoc && npm run esdoc",
+    "esdoc": "esdoc",
+    "jsdoc": "jsdoc lib/* -d dist/api/jsdoc --verbose",
+    "publish": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aristov/cssmodule.git"
+  },
+  "keywords": [
+    "DOM",
+    "CSS",
+    "CSSOM",
+    "Object",
+    "Model"
+  ],
+  "author": "Vyacheslav Aristov <vv.aristov@gmail.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aristov/cssmodule/issues"
+  },
+  "homepage": "https://github.com/aristov/cssmodule#readme",
+  "dependencies": {
+    "dommodule": "github:aristov/dommodule"
+  }
+}
